@@ -1,15 +1,15 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "FC Barcelona";
 ---
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Més que un club</h2>
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>My Astro Site</h1>
-  </body>
-</html>
+  <p>El FC Barcelona es un club de fútbol fundado en 1899 en la ciudad de Barcelona, España. Juega sus partidos como local en el Spotify Camp Nou y compite en LaLiga, la máxima categoría del fútbol español.</p>
+
+  <p>El club es conocido en todo el mundo por su cantera, La Masia, de donde han salido futbolistas históricos como Xavi, Iniesta, Messi y, más recientemente, jóvenes talentos como Lamine Yamal, Pedri o Pau Cubarsí. Su estilo de juego, basado en la posesión del balón y el toque corto, se conoce popularmente como "el toque".</p>
+
+  <p>A lo largo de su historia, el Barça ha ganado numerosos títulos de LaLiga, Copa del Rey y la UEFA Champions League, y en la temporada 2025/26 volvió a levantar el título liguero y la Supercopa de España bajo las órdenes de Hansi Flick.</p>
+
+  <p>En este sitio iré compartiendo fichas de algunos de los jugadores actuales de la plantilla: su nombre, su edad y algunos de sus récords y datos personales. Puedes verlas en la sección <a href="/blog/">Blog</a>.</p>
+</BaseLayout>

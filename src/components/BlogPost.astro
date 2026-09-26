@@ -1,0 +1,26 @@
+---
+const { title, url } = Astro.props;
+---
+<li class="blog-post"><a href={url}>{title}</a></li>
+
+<style>
+	.blog-post a {
+		display: grid;
+		min-height: 5.5rem;
+		place-items: center;
+		padding: 1rem;
+		border: 1px solid color-mix(in srgb, currentColor 24%, transparent);
+		border-radius: 6px;
+		color: inherit;
+		font-weight: 600;
+		text-align: center;
+		text-decoration: none;
+		transition: border-color 150ms ease, transform 150ms ease;
+	}
+
+	.blog-post a:hover,
+	.blog-post a:focus-visible {
+		border-color: currentColor;
+		transform: translateY(-2px);
+	}
+</style>

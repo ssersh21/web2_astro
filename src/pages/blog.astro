@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPost from '../components/BlogPost.astro';
+
+const allPosts = await getCollection('blog');
+const pageTitle = "Jugadores del FC Barcelona"
+---
+<BaseLayout pageTitle={pageTitle}>
+  <main class="blog-content">
+    <p class="blog-intro">Fichas de 5 jugadores actuales de la plantilla, con su nombre, edad y algunos de sus récords personales.</p>
+    <ul class="blog-post-list">
+      {allPosts.map((post) => (
+        <BlogPost url={`/posts/${post.id}/`} title={post.data.title} />
+      ))}
+    </ul>
+  </main>
+</BaseLayout>
+
+<style>
+  :global(h1) {
+    max-width: 58rem;
+    margin: 2rem auto 0;
+    padding-inline: 1.5rem;
+    text-align: center;
+  }
+
+  .blog-content {
+    width: min(100% - 2rem, 58rem);
+    margin: 0 auto;
+    padding: 1.5rem 0 3rem;
+    text-align: center;
+  }
+
+  .blog-intro {
+    max-width: 42rem;
+    margin: 0 auto 1.75rem;
+    line-height: 1.6;
+  }
+
+  .blog-post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    gap: 0.9rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+</style>
